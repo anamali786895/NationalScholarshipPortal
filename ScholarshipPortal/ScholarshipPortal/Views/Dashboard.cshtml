@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Institute Dashboard";
+}
+
+<link rel="stylesheet" href="~/css/custom.css" />
+
+<div class="dashboard-container">
+
+    <div class="sidebar">
+        <h3 class="sidebar-title">NSP Portal</h3>
+        <ul class="sidebar-menu">
+            <li><a href="/Institute/Dashboard" class="active">Dashboard</a></li>
+            <li><a href="/Institute/ViewProfile">View Profile</a></li>
+            <li><a href="/Institute/EditProfile">Edit Profile</a></li>
+            <li><a href="/Institute/Register">New Registration</a></li>
+            <li><a href="/Institute/Logout" class="text-danger fw-bold">Logout</a></li>
+        </ul>
+    </div>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+        <!-- TOP GREETING -->
+        <div class="welcome-box shadow">
+            <h2 class="fw-bold text-success">Welcome, @TempData["InstituteName"]!</h2>
+            <p class="text-muted">This is your official Institute Dashboard.</p>
+        </div>
+
+        <!-- STATS CARDS -->
+        <div class="row mt-4">
+
+            <div class="col-md-4 mb-3">
+                <div class="card stats-card shadow-sm">
+                    <h4>Total Students</h4>
+                    <h2>125</h2>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card stats-card shadow-sm">
+                    <h4>Pending Applications</h4>
+                    <h2>42</h2>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card stats-card shadow-sm">
+                    <h4>Approved Applications</h4>
+                    <h2>83</h2>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="action-buttons mt-4">
+            <a href="/Institute/ViewProfile" class="btn btn-primary px-4 py-2 mx-2">View Profile</a>
+            <a href="/Institute/Register" class="btn btn-success px-4 py-2 mx-2">Register New Institute</a>
+            <a href="/Institute/Logout" class="btn btn-danger px-4 py-2 mx-2">Logout</a>
+        </div>
+
+    </div>
+</div>
+

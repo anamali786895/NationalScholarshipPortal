@@ -1,0 +1,186 @@
+﻿@model InstituteScholarshipPortal.Models.InstituteRegistration
+
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<link rel="stylesheet" href="~/css/custom.css" />
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h3 class="sidebar-title">NSP Portal</h3>
+        <ul class="sidebar-menu">
+            <li><a href="/Institute/Dashboard">Dashboard</a></li>
+            <li><a href="/Institute/ViewProfile">View Profile</a></li>
+            <li><a href="/Institute/EditProfile" class="active">Edit Profile</a></li>
+            <li><a href="/Institute/Register">New Registration</a></li>
+            <li><a href="/Institute/Logout" class="text-danger fw-bold">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+        <div class="welcome-box shadow mb-4">
+            <h2 class="fw-bold text-primary">Edit Institute Profile</h2>
+            <p class="text-muted">Update your institute information below.</p>
+        </div>
+
+        <form asp-action="EditProfile" method="post">
+            <input type="hidden" asp-for="InstituteId" />
+
+            <div class="card p-4 shadow" style="border-radius: 12px;">
+
+                <!-- BASIC DETAILS -->
+                <h4 class="text-secondary fw-bold mb-3">Basic Details</h4>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>Institute Name</label>
+                        <input asp-for="InstituteName" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>Institute Code</label>
+                        <input asp-for="InstituteCode" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>DISE Code</label>
+                        <input asp-for="DISECode" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>State</label>
+                        <input asp-for="State" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>District</label>
+                        <input asp-for="District" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>Location</label>
+                        <input asp-for="Location" class="form-control" />
+                    </div>
+                </div>
+
+                <!-- INSTITUTE TYPE -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>Institute Type</label>
+                        <select asp-for="InstituteType" class="form-control">
+                            <option value="">-- Select Type --</option>
+                            <option>School</option>
+                            <option>College</option>
+                            <option>University</option>
+                            <option>Technical Institute</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- ⭐ YEAR ADMISSION STARTED (Missing earlier) -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>Year Admission Started</label>
+                        <input asp-for="YearAdmissionStarted" class="form-control" placeholder="e.g., 2005" />
+                    </div>
+                </div>
+
+                <!-- ADDRESS -->
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <label>Address</label>
+                        <textarea asp-for="Address" class="form-control" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <hr />
+
+                <!-- AFFILIATION DETAILS -->
+                <h4 class="text-secondary fw-bold mb-3">Affiliation Details</h4>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>University State</label>
+                        <input asp-for="AffiliatedUniversityState" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>University Board</label>
+                        <input asp-for="UniversityBoardName" class="form-control" />
+                    </div>
+                </div>
+
+                <hr />
+
+                <!-- CONTACT DETAILS -->
+                <h4 class="text-secondary fw-bold mb-3">Contact Details</h4>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>Principal Name</label>
+                        <input asp-for="PrincipalName" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>Mobile Number</label>
+                        <input asp-for="MobileNumber" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>Telephone</label>
+                        <input asp-for="Telephone" class="form-control" />
+                    </div>
+                </div>
+
+                <hr />
+
+                <!-- SECURITY -->
+                <h4 class="text-secondary fw-bold mb-3">Security Info</h4>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>Security Question</label>
+                        <select asp-for="SecurityQuestion" class="form-control">
+                            <option value="">-- Select Question --</option>
+                            <option>What is your pet's name?</option>
+                            <option>What is your birth place?</option>
+                            <option>What is your favourite teacher?</option>
+                            <option>What is your favourite food?</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Security Answer</label>
+                        <input asp-for="SecurityAnswer" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>Password</label>
+                        <input asp-for="Password" class="form-control" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>Confirm Password</label>
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                    </div>
+                </div>
+
+                <!-- BUTTONS -->
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary px-4 py-2">Save Changes</button>
+                    <a href="/Institute/ViewProfile" class="btn btn-secondary px-4 py-2">Cancel</a>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</div>

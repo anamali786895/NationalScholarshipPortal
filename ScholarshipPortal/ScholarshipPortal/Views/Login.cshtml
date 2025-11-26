@@ -1,0 +1,59 @@
+﻿@model InstituteScholarshipPortal.Models.InstituteLoginViewModel
+@{
+    ViewData["Title"] = "Institute Login";
+}
+
+<link rel="stylesheet" href="~/css/custom.css" />
+
+<div class="container login-container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+
+            <div class="card shadow p-4">
+                <h3 class="text-center text-primary mb-4 fw-bold">Institute Login</h3>
+
+                @* Display Error *@
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger text-center">@ViewBag.Error</div>
+                }
+
+                <form asp-action="Login" method="post">
+
+                    @* Institute Code *@
+                    <div class="form-group mb-3">
+                        <label class="fw-semibold">Institute Code</label>
+                        <input asp-for="InstituteCode" class="form-control" placeholder="Enter Institute Code" />
+                        <span asp-validation-for="InstituteCode" class="text-danger"></span>
+                    </div>
+
+                    @* Password *@
+                    <div class="form-group mb-3">
+                        <label class="fw-semibold">Password</label>
+                        <input asp-for="Password" type="password" class="form-control" placeholder="Enter Password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    @* Submit Button *@
+                    <button type="submit" class="btn btn-primary w-100 fw-semibold mt-2">
+                        Login
+                    </button>
+
+                    @* Registration Link *@
+                    <div class="text-center mt-3">
+                        <a href="/Institute/Register" class="text-decoration-none">
+                            New Institute? Register Here
+                        </a>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

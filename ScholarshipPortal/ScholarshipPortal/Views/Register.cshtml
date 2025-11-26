@@ -1,0 +1,161 @@
+﻿@model InstituteScholarshipPortal.Models.InstituteRegistration
+@{
+    ViewData["Title"] = "Institute Registration";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/custom.css" />
+
+<div class="container form-container">
+
+    <h2 class="form-title">Institute Registration</h2>
+
+    <form asp-action="Register" method="post" enctype="multipart/form-data">
+
+        <!-- ===================== INSTITUTE DETAILS ===================== -->
+
+        <div class="section-card">
+            <h4 class="section-title">Institute Details</h4>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label>Institute Name</label>
+                    <input asp-for="InstituteName" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label>Institute Code</label>
+                    <input asp-for="InstituteCode" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label>DISE Code</label>
+                    <input asp-for="DISECode" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label>State</label>
+                    <input asp-for="State" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label>District</label>
+                    <input asp-for="District" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label>Location</label>
+                    <select asp-for="Location" class="form-control">
+                        <option>Urban</option>
+                        <option>Rural</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label>Institute Type</label>
+                    <input asp-for="InstituteType" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label>Year Admission Started</label>
+                    <input asp-for="YearAdmissionStarted" class="form-control" />
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <label>Address</label>
+                    <input asp-for="Address" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <!-- ===================== AFFILIATION DETAILS ===================== -->
+
+        <div class="section-card">
+            <h4 class="section-title">Affiliation Details</h4>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Affiliated University State</label>
+                    <input asp-for="AffiliatedUniversityState" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>University/Board Name</label>
+                    <input asp-for="UniversityBoardName" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Institute Establishment Certificate</label>
+                    <input asp-for="EstablishmentCertificate" type="file" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Affiliation Certificate</label>
+                    <input asp-for="AffiliationCertificate" type="file" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <!-- ===================== PRINCIPAL & LOGIN INFO ===================== -->
+
+        <div class="section-card">
+            <h4 class="section-title">Principal & Contact Info</h4>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label>Principal Name</label>
+                    <input asp-for="PrincipalName" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label>Mobile Number</label>
+                    <input asp-for="MobileNumber" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label>Telephone</label>
+                    <input asp-for="Telephone" class="form-control" />
+                </div>
+            </div>
+
+            <h4 class="section-title">Login & Security</h4>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Password</label>
+                    <input asp-for="Password" type="password" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Confirm Password</label>
+                    <input asp-for="ConfirmPassword" type="password" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Security Question</label>
+                    <input asp-for="SecurityQuestion" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Security Answer</label>
+                    <input asp-for="SecurityAnswer" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-check mt-2">
+                <input type="checkbox" class="form-check-input" required />
+                <label class="form-check-label">
+                    I hereby declare that all the information provided is true.
+                </label>
+            </div>
+        </div>
+
+        <!-- ===================== BUTTONS ===================== -->
+        <div class="text-center mt-4">
+            <button class="btn btn-primary btn-submit" type="submit">Submit</button>
+            <button class="btn btn-secondary btn-reset" type="reset">Reset</button>
+        </div>
+
+    </form>
+
+</div>
