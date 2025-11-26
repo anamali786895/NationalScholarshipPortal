@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ScholarshipPortal.Models;
 
 namespace ScholarshipPortal.Data
@@ -14,6 +14,8 @@ namespace ScholarshipPortal.Data
         // DbSets represent the tables in the database
         public DbSet<RegisterViewModel> RegisteredUsers { get; set; }
         public DbSet<ContactViewModel> ContactSubmissions { get; set; }
+        public DbSet<InstituteRegistration> Institutes { get; set; }
+
 
         // *** CRITICAL FIX: ADDED NEW DbSet for Scholarship Application ***
         public DbSet<ScholarshipApplicationViewModel> ScholarshipApplications { get; set; }
